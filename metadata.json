@@ -1,0 +1,8 @@
+{
+  "name": "MONETA Chain",
+  "description": "Next-generation independent blockchain ecosystem built for speed, intelligence, security, and real-world digital finance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

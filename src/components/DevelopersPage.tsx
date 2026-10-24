@@ -1,9 +1,6 @@
 import { FadeIn } from "./FadeIn";
 import { Terminal, Github, Code, Box, Server, Shield, ArrowRight, LayoutDashboard, Cpu, Smartphone, Lock, Search, BookOpen, Fingerprint, BrainCircuit, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
-import { StatusBadge } from "./support/StatusBadge";
-import { ContextualSupportBanner } from "./support/ContextualSupportBanner";
-import { monetaChainFeatures } from "../config/featureStatus";
 
 export function DevelopersPage() {
   return (
@@ -39,22 +36,13 @@ export function DevelopersPage() {
               </div>
               <div className="font-mono text-xs md:text-sm text-gray-200">
                 <div className="flex items-center space-x-2 mb-1">
-                  <StatusBadge status="under_development" size="sm" />
+                  <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
                   <span className="text-amber-300 font-bold uppercase">DEVELOPER TOOLS & APIS</span>
                 </div>
                 MONETA CHAIN developer tools, testnets, and RPCs are currently under active development.
               </div>
             </div>
           </FadeIn>
-        </div>
-
-        {/* Top Contextual Support Banner */}
-        <div className="mb-12">
-          <ContextualSupportBanner 
-            featureId="developerTools" 
-            customPrompt="Need help developing with MONETA CHAIN?" 
-            sourcePage="/developers" 
-          />
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12">

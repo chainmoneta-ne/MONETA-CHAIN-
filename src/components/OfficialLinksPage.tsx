@@ -17,7 +17,9 @@ export function OfficialLinksPage() {
       category: "Global Community Impact",
       desc: "Discover the foundation's initiatives focused on community impact, social development, and creating positive change.",
       actionText: "VISIT MONETA GLOBAL FOUNDATION",
-      status: "Official website link coming soon."
+      externalLink: "https://moneta-globle-foundation.vercel.app",
+      status: "Official Verified Website",
+      verified: true
     },
     {
       title: "VORTEX INNOVATIONS",
@@ -194,20 +196,27 @@ export function OfficialLinksPage() {
                 </span>
               </Link>
 
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-royal-purple/10 border border-royal-purple/20 flex items-center justify-center mx-auto mb-3 text-royal-purple">
+              <a
+                href="https://moneta-globle-foundation.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-6 rounded-xl bg-white/5 border border-royal-purple/30 text-center hover:border-royal-purple hover:bg-white/[0.08] transition-all group block cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-lg bg-royal-purple/10 border border-royal-purple/20 flex items-center justify-center mx-auto mb-3 text-royal-purple group-hover:scale-110 transition-transform">
                   <Globe2 size={20} />
                 </div>
-                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1">
-                  MONETA GLOBAL FOUNDATION
+                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5 group-hover:text-royal-purple transition-colors">
+                  <span>MONETA GLOBAL FOUNDATION</span>
+                  <ExternalLink size={14} className="text-royal-purple opacity-80" />
                 </h4>
                 <p className="text-royal-purple font-mono text-xs uppercase font-bold tracking-wider mb-2">
                   Global Community Impact
                 </p>
-                <span className="text-[11px] font-mono text-gray-500">
-                  Link Coming Soon
+                <span className="text-[11px] font-mono text-gray-400 group-hover:text-white transition-colors flex items-center justify-center gap-1">
+                  <span>moneta-globle-foundation.vercel.app</span>
+                  <span>→</span>
                 </span>
-              </div>
+              </a>
             </div>
 
             <div className="border-t border-white/10 pt-6 text-center">
@@ -231,7 +240,7 @@ export function OfficialLinksPage() {
                 Always verify and use official links published directly through the MONETA ecosystem directory to ensure you are visiting authentic platforms.
               </p>
               <p className="text-gray-400 font-display text-xs max-w-2xl mx-auto italic">
-                Verified ecosystem platforms including VORTEX INNOVATIONS, MONETA ORACLE, and MONETA EXPLORER are verified official entities. Always ensure URLs match the official directory.
+                Verified ecosystem platforms including VORTEX INNOVATIONS, MONETA GLOBAL FOUNDATION, MONETA ORACLE, and MONETA EXPLORER are verified official entities. Always ensure URLs match the official directory.
               </p>
             </div>
           </FadeIn>

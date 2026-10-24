@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { FadeIn } from "./FadeIn";
 import { Terminal, Github, Code, Box, Server, Shield, ArrowRight, ShieldCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { FeatureStatusCard } from "./support/FeatureStatusCard";
-import { monetaChainFeatures } from "../config/featureStatus";
-import { ContextualSupportModal } from "./support/ContextualSupportModal";
 
 export function DevelopersSection() {
   const navigate = useNavigate();
-  const [validatorSupportOpen, setValidatorSupportOpen] = useState(false);
-  const [nodeSupportOpen, setNodeSupportOpen] = useState(false);
 
   return (
     <div id="developers">
@@ -101,10 +96,47 @@ export function DevelopersSection() {
               </p>
            </FadeIn>
 
-           {/* Feature Status Cards for Validators and Nodes */}
+           {/* Architectural Overview Cards for Validators and Nodes */}
            <div className="grid md:grid-cols-2 gap-8 text-left mb-12 max-w-4xl mx-auto">
-             <FeatureStatusCard feature={monetaChainFeatures.validators} sourcePage="/home#nodes" />
-             <FeatureStatusCard feature={monetaChainFeatures.nodes} sourcePage="/home#nodes" />
+             <FadeIn delay={0.1} className="glass-card p-6 border-white/10 bg-black/40 rounded-2xl relative overflow-hidden">
+               <div className="flex items-center justify-between mb-4">
+                 <div className="flex items-center space-x-3">
+                   <div className="w-10 h-10 rounded-xl bg-electric-blue/10 flex items-center justify-center text-electric-blue border border-electric-blue/20">
+                     <ShieldCheck size={22} />
+                   </div>
+                   <div>
+                     <h3 className="font-heading text-lg font-bold text-white">Validator Network</h3>
+                     <p className="text-xs text-gray-400 font-display">Proof-of-Stake Consensus</p>
+                   </div>
+                 </div>
+                 <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase font-bold">
+                   Under Development
+                 </span>
+               </div>
+               <p className="text-sm text-gray-300 font-display leading-relaxed">
+                 Institutional and community-operated validator infrastructure designed for fast block finality, high throughput, and AI-assisted slashing protection.
+               </p>
+             </FadeIn>
+
+             <FadeIn delay={0.2} className="glass-card p-6 border-white/10 bg-black/40 rounded-2xl relative overflow-hidden">
+               <div className="flex items-center justify-between mb-4">
+                 <div className="flex items-center space-x-3">
+                   <div className="w-10 h-10 rounded-xl bg-royal-purple/10 flex items-center justify-center text-royal-purple border border-royal-purple/20">
+                     <Server size={22} />
+                   </div>
+                   <div>
+                     <h3 className="font-heading text-lg font-bold text-white">Full Node Network</h3>
+                     <p className="text-xs text-gray-400 font-display">State & RPC Execution</p>
+                   </div>
+                 </div>
+                 <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase font-bold">
+                   Under Development
+                 </span>
+               </div>
+               <p className="text-sm text-gray-300 font-display leading-relaxed">
+                 Lightweight client synchronization protocols allowing users, developers, and partners to run independent nodes on standard consumer hardware.
+               </p>
+             </FadeIn>
            </div>
 
            <div className="grid md:grid-cols-3 gap-6 text-left mb-12 max-w-5xl mx-auto">
@@ -122,13 +154,12 @@ export function DevelopersSection() {
                 </FadeIn>
              ))}
            </div>
-           
-           <FadeIn delay={0.3} className="flex flex-wrap items-center justify-center gap-4">
+                      <FadeIn delay={0.3} className="flex flex-wrap items-center justify-center gap-4">
               <button 
                 className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-golden-yellow to-amber-400 text-black font-heading font-black text-sm uppercase tracking-wider hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer shadow-lg shadow-golden-yellow/20" 
-                onClick={() => setValidatorSupportOpen(true)}
+                onClick={() => navigate('/developers')}
               >
-                [ GET VALIDATOR SUPPORT ]
+                [ EXPLORE VALIDATOR NETWORK ]
               </button>
               <button 
                 className="px-8 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white font-heading font-bold text-sm uppercase tracking-wider hover:bg-white/10 transition-all cursor-pointer" 
@@ -138,22 +169,6 @@ export function DevelopersSection() {
               </button>
            </FadeIn>
         </div>
-
-        {/* Validator Support Modal */}
-        <ContextualSupportModal
-          feature={monetaChainFeatures.validators}
-          isOpen={validatorSupportOpen}
-          onClose={() => setValidatorSupportOpen(false)}
-          sourcePage="/home#nodes"
-        />
-
-        {/* Node Support Modal */}
-        <ContextualSupportModal
-          feature={monetaChainFeatures.nodes}
-          isOpen={nodeSupportOpen}
-          onClose={() => setNodeSupportOpen(false)}
-          sourcePage="/home#nodes"
-        />
       </section>
     </div>
   );

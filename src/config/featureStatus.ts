@@ -40,19 +40,18 @@ export interface FeatureConfig {
 export const monetaChainFeatures: Record<string, FeatureConfig> = {
   support: {
     id: "support",
-    name: "MONETA Support Central",
+    name: "MONETA Help Center",
     context: "CENTRAL_SUPPORT",
     source: "MONETA CHAIN",
     category: "services",
-    status: "live",
-    headline: "Official MONETA CHAIN Support Hub",
-    description: "The official, live central support system for MONETA CHAIN community, users, and ecosystem developers.",
+    status: "coming_soon",
+    headline: "Official MONETA CHAIN Help Center",
+    description: "The central help resources and frequently asked questions for the MONETA CHAIN community.",
     contextPrompt: "How can we help you today with MONETA CHAIN?",
-    supportEnabled: true,
+    supportEnabled: false,
     confirmedInfo: [
-      "MONETA Support operates live across the pre-launch, testnet, and mainnet phases.",
-      "Support tickets automatically attach feature status and source context.",
-      "Dedicated help flows for live features vs under-development components."
+      "Access FAQs, documentation, and technical guidelines.",
+      "Community channels and official links for updates."
     ],
     helpOptions: [
       { id: "general_info", label: "GENERAL INFORMATION", description: "Questions regarding the ecosystem, architecture, or roadmap.", category: "general_info" },

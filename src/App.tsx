@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ScrollManager } from './components/ScrollManager';
 import { LoadingFallback } from './components/LoadingFallback';
@@ -38,7 +38,6 @@ const CountdownsPage = lazy(() => import('./components/CountdownsPage').then(m =
 const AcademyPage = lazy(() => import('./components/AcademyPage').then(m => ({ default: m.AcademyPage })));
 const OfficialLinksPage = lazy(() => import('./components/OfficialLinksPage').then(m => ({ default: m.OfficialLinksPage })));
 const RoadmapPage = lazy(() => import('./components/RoadmapPage').then(m => ({ default: m.RoadmapPage })));
-const SupportHomePage = lazy(() => import('./components/support/SupportHomePage').then(m => ({ default: m.SupportHomePage })));
 
 function HomePage() {
   return (
@@ -87,7 +86,7 @@ export default function App() {
             <Route path="/academy" element={<AcademyPage />} />
             <Route path="/official-links" element={<OfficialLinksPage />} />
             <Route path="/roadmap" element={<RoadmapPage />} />
-            <Route path="/support" element={<SupportHomePage />} />
+            <Route path="/support" element={<Navigate to="/faq" replace />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

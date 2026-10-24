@@ -1,8 +1,6 @@
 import { FadeIn } from "./FadeIn";
-import { HelpCircle, ChevronDown, Headset, ArrowRight } from "lucide-react";
+import { HelpCircle, ChevronDown } from "lucide-react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { ContextualSupportBanner } from "./support/ContextualSupportBanner";
 
 const faqs = [
   {
@@ -261,16 +259,6 @@ export function FAQPage() {
              {faqs.map((faq, idx) => (
                 <FAQItem key={idx} question={faq.question} answer={faq.answer} />
              ))}
-          </FadeIn>
-          
-          {/* Support Hub Callout */}
-          <FadeIn delay={0.25} className="mt-12">
-            <ContextualSupportBanner 
-              featureId="support"
-              customPrompt="Need personalized help or have a question?"
-              customDescription="Our support team is live and actively assisting users, developers, and partners across the MONETA CHAIN ecosystem."
-              sourcePage="/faq"
-            />
           </FadeIn>
 
           <FadeIn delay={0.3} className="mt-12 text-center space-y-6">

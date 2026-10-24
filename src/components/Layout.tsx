@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { 
   Link, Instagram, Facebook, Linkedin, Youtube, Send, 
-  X as XIconLucide, Cpu, ShieldCheck, Zap, Globe2, Menu, Headset 
+  X as XIconLucide, Cpu, ShieldCheck, Zap, Globe2, Menu 
 } from "lucide-react";
 import { NewsletterSignup } from './NewsletterSignup';
 import logoImg from "../assets/images/moneta_chain_logo_1788243584482.jpg";
-import { FloatingSupportLauncher } from "./support/FloatingSupportLauncher";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -92,10 +91,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <RouterLink to="/features" className="hover:text-electric-blue transition-colors">Features</RouterLink>
             <RouterLink to="/vision" className="hover:text-electric-blue transition-colors">Vision</RouterLink>
             <RouterLink to="/developers" className="hover:text-electric-blue transition-colors">Developers</RouterLink>
-            <RouterLink to="/support" className="hover:text-electric-blue transition-colors flex items-center space-x-1.5 text-emerald-400">
-              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-              <span>Support</span>
-            </RouterLink>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -119,10 +114,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <RouterLink to="/features" className="hover:text-electric-blue transition-colors font-medium">Features</RouterLink>
             <RouterLink to="/vision" className="hover:text-electric-blue transition-colors font-medium">Vision</RouterLink>
             <RouterLink to="/developers" className="hover:text-electric-blue transition-colors font-medium">Developers</RouterLink>
-            <RouterLink to="/support" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold flex items-center space-x-2">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span>Support & Feature Status</span>
-            </RouterLink>
             <div className="pt-4 mt-2 border-t border-white/10 flex flex-col">
                <RouterLink to="/waitlist" className="px-5 py-3 btn-primary text-center w-full">Join Waitlist</RouterLink>
             </div>
@@ -266,31 +257,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="font-heading text-sm font-semibold mb-6">Support & Status</h4>
+              <h4 className="font-heading text-sm font-semibold mb-6">Help & Resources</h4>
               <ul className="space-y-4 text-sm text-gray-400 font-display">
                 <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support" className="flex items-center space-x-1.5 text-emerald-400 font-bold">
-                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                    <span>Support Hub (🟢 LIVE)</span>
-                  </RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support">System & Feature Status</RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support?feature=presale">Presale Support</RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support?feature=mining">Mining Support</RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support?feature=validators">Validator Support</RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
-                  <RouterLink to="/support?feature=wallet">Wallet Support</RouterLink>
-                </li>
-                <li className="hover:text-electric-blue cursor-pointer">
                   <RouterLink to="/faq">Help Center & FAQ</RouterLink>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
+                  <RouterLink to="/safety">Safety Center</RouterLink>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
+                  <RouterLink to="/privacy">Privacy Policy</RouterLink>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
+                  <RouterLink to="/terms">Terms of Service</RouterLink>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
+                  <RouterLink to="/trademark">Trademark Policy</RouterLink>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
+                  <RouterLink to="/conduct">Code of Conduct</RouterLink>
                 </li>
               </ul>
             </div>
@@ -302,18 +287,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-between">
               <p>&copy; MONETA CHAIN. All Rights Reserved.</p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                 <RouterLink to="/support" className="text-gray-400 hover:text-white transition-colors">
-                   Support & Feature Status: <strong className="text-emerald-green font-normal">🟢 Support Operational</strong>
-                 </RouterLink>
+              <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
+                <RouterLink to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</RouterLink>
+                <RouterLink to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</RouterLink>
+                <RouterLink to="/faq" className="text-gray-400 hover:text-white transition-colors">Help Center & FAQ</RouterLink>
               </div>
             </div>
           </div>
         </div>
       </footer>
-
-      {/* Global Context-Aware Floating Support Launcher */}
-      <FloatingSupportLauncher />
     </div>
   );
 }

@@ -238,6 +238,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <RouterLink to="/official-links">Official Links</RouterLink>
                 </li>
                 <li className="hover:text-electric-blue cursor-pointer">
+                  <a href="https://vortex-innvations.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                    <span>VORTEX INNOVATIONS</span>
+                    <span className="text-[10px] bg-electric-blue/10 text-electric-blue px-1.5 py-0.5 rounded border border-electric-blue/20">WEBSITE</span>
+                  </a>
+                </li>
+                <li className="hover:text-electric-blue cursor-pointer">
                    <RouterLink to="/vera" className="flex items-center space-x-2"><span className="w-1.5 h-1.5 bg-electric-blue rounded-full animate-pulse"></span><span>VERA AI</span></RouterLink>
                 </li>
                 <li className="hover:text-electric-blue cursor-pointer">

@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowRight, Link as LinkIcon, ShieldAlert, Blocks, Heart, Sparkles, Globe2, Eye } from "lucide-react";
+import { ArrowRight, Link as LinkIcon, ShieldAlert, Blocks, Heart, Sparkles, Globe2, Eye, ExternalLink, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function OfficialLinksPage() {
@@ -24,21 +24,27 @@ export function OfficialLinksPage() {
       category: "Technology & Innovation",
       desc: "Visit the official VORTEX INNOVATIONS company website.",
       actionText: "VISIT VORTEX INNOVATIONS",
-      status: "Official website link coming soon."
+      externalLink: "https://vortex-innvations.vercel.app",
+      status: "Official Verified Website",
+      verified: true
     },
     {
       title: "MONETA ORACLE",
       category: "Decentralized Data Feed",
-      desc: "Visit the official MONETA ORACLE website.",
+      desc: "Access verified external data, smart contract price feeds, and real-time oracle consensus on MONETA CHAIN.",
       actionText: "VISIT MONETA ORACLE",
-      status: "Official website link coming soon."
+      externalLink: "https://moneta-chain-oracal.vercel.app",
+      status: "Official Verified Website",
+      verified: true
     },
     {
       title: "MONETA EXPLORER",
       category: "Blockchain Explorer",
-      desc: "Explore the official MONETA CHAIN blockchain explorer.",
+      desc: "Explore the official MONETA CHAIN blockchain explorer, block verification, and real-time transaction ledger.",
       actionText: "VISIT MONETA EXPLORER",
-      status: "Official website link coming soon."
+      externalLink: "https://moneta-explorer.vercel.app",
+      status: "Official Verified Website",
+      verified: true
     }
   ];
 
@@ -86,10 +92,19 @@ export function OfficialLinksPage() {
                     {link.internalLink ? (
                       <Link 
                         to={link.internalLink} 
-                        className="px-6 py-3 rounded bg-electric-blue text-black font-bold uppercase tracking-wider text-sm flex items-center gap-2 hover:bg-white transition-colors"
+                        className="px-6 py-3 rounded bg-electric-blue text-black font-bold uppercase tracking-wider text-sm flex items-center gap-2 hover:bg-white hover:shadow-[0_0_15px_rgba(0,210,255,0.4)] transition-all"
                       >
                         <span>{link.actionText}</span> <ArrowRight className="w-4 h-4" />
                       </Link>
+                    ) : link.externalLink ? (
+                      <a 
+                        href={link.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded bg-electric-blue text-black font-bold uppercase tracking-wider text-sm flex items-center gap-2 hover:bg-white hover:shadow-[0_0_20px_rgba(0,210,255,0.4)] transition-all"
+                      >
+                        <span>{link.actionText}</span> <ExternalLink className="w-4 h-4" />
+                      </a>
                     ) : (
                       <button 
                         disabled 
@@ -98,9 +113,27 @@ export function OfficialLinksPage() {
                         <span>{link.actionText}</span> <ArrowRight className="w-4 h-4" />
                       </button>
                     )}
-                    <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">
-                      {link.status}
-                    </span>
+                    {link.verified ? (
+                      <div className="flex items-center gap-1.5 text-xs font-mono text-[#19C37D] uppercase tracking-wider font-semibold">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        <span>{link.status}</span>
+                      </div>
+                    ) : (
+                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">
+                        {link.status}
+                      </span>
+                    )}
+                    {link.externalLink && (
+                      <a
+                        href={link.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-mono text-electric-blue/80 hover:text-white transition-colors flex items-center gap-1 underline underline-offset-2"
+                      >
+                        <span>{link.externalLink}</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -121,29 +154,45 @@ export function OfficialLinksPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-3 text-electric-blue">
+              <a
+                href="https://vortex-innvations.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-6 rounded-xl bg-white/5 border border-electric-blue/30 text-center hover:border-electric-blue hover:bg-white/[0.08] transition-all group block cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-3 text-electric-blue group-hover:scale-110 transition-transform">
                   <Sparkles size={20} />
                 </div>
-                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1">
-                  VORTEX INNOVATIONS
+                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5 group-hover:text-electric-blue transition-colors">
+                  <span>VORTEX INNOVATIONS</span>
+                  <ExternalLink size={14} className="text-electric-blue opacity-80" />
                 </h4>
-                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider">
+                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider mb-2">
                   Technology & Innovation
                 </p>
-              </div>
+                <span className="text-[11px] font-mono text-gray-400 group-hover:text-white transition-colors flex items-center justify-center gap-1">
+                  <span>vortex-innvations.vercel.app</span>
+                  <span>→</span>
+                </span>
+              </a>
 
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-3 text-electric-blue">
+              <Link
+                to="/"
+                className="p-6 rounded-xl bg-white/5 border border-white/10 text-center hover:border-electric-blue hover:bg-white/[0.08] transition-all group block"
+              >
+                <div className="w-10 h-10 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-3 text-electric-blue group-hover:scale-110 transition-transform">
                   <Blocks size={20} />
                 </div>
-                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1">
+                <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1 group-hover:text-electric-blue transition-colors">
                   MONETA CHAIN
                 </h4>
-                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider">
+                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider mb-2">
                   Blockchain Infrastructure
                 </p>
-              </div>
+                <span className="text-[11px] font-mono text-gray-400 group-hover:text-white transition-colors">
+                  Current Portal →
+                </span>
+              </Link>
 
               <div className="p-6 rounded-xl bg-white/5 border border-white/10 text-center">
                 <div className="w-10 h-10 rounded-lg bg-royal-purple/10 border border-royal-purple/20 flex items-center justify-center mx-auto mb-3 text-royal-purple">
@@ -152,9 +201,12 @@ export function OfficialLinksPage() {
                 <h4 className="font-heading font-black text-base text-white uppercase tracking-wider mb-1">
                   MONETA GLOBAL FOUNDATION
                 </h4>
-                <p className="text-royal-purple font-mono text-xs uppercase font-bold tracking-wider">
+                <p className="text-royal-purple font-mono text-xs uppercase font-bold tracking-wider mb-2">
                   Global Community Impact
                 </p>
+                <span className="text-[11px] font-mono text-gray-500">
+                  Link Coming Soon
+                </span>
               </div>
             </div>
 
@@ -174,12 +226,12 @@ export function OfficialLinksPage() {
           <FadeIn delay={0.4}>
             <div className="glass-card p-8 border-electric-blue/20 bg-electric-blue/5 text-center">
               <ShieldAlert className="w-10 h-10 text-electric-blue mx-auto mb-3 opacity-80" />
-              <h4 className="text-lg font-heading font-black text-white uppercase tracking-wider mb-2">OFFICIAL LINKS COMING SOON</h4>
+              <h4 className="text-lg font-heading font-black text-white uppercase tracking-wider mb-2">OFFICIAL DIRECTORY & AUTHENTICITY</h4>
               <p className="text-gray-300 font-display text-sm mb-3">
-                The official website links will be published here soon.
+                Always verify and use official links published directly through the MONETA ecosystem directory to ensure you are visiting authentic platforms.
               </p>
               <p className="text-gray-400 font-display text-xs max-w-2xl mx-auto italic">
-                Always use the links provided directly through the official MONETA CHAIN website to ensure you are visiting authentic platforms.
+                Verified ecosystem platforms including VORTEX INNOVATIONS, MONETA ORACLE, and MONETA EXPLORER are verified official entities. Always ensure URLs match the official directory.
               </p>
             </div>
           </FadeIn>

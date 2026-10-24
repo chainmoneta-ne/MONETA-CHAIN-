@@ -1,6 +1,6 @@
 import veraAvatar from '../assets/images/vera_black_woman_avatar_1779390780706.png';
 import { FadeIn } from "./FadeIn";
-import { BrainCircuit, BookOpen, Blocks, TerminalSquare, Wallet, Scale, Sparkles, Globe2, ArrowRight } from "lucide-react";
+import { BrainCircuit, BookOpen, Blocks, TerminalSquare, Wallet, Scale, Sparkles, Globe2, ArrowRight, ExternalLink } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 
 export function EcosystemSection() {
@@ -41,8 +41,17 @@ export function EcosystemSection() {
                     Cutting-edge engineering and frontier technologies powering next-generation decentralized ecosystems.
                   </p>
                 </div>
-                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-gray-500">
-                  <span>STATUS: ACTIVE</span>
+                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+                  <span className="text-gray-500">STATUS: ACTIVE</span>
+                  <a
+                    href="https://vortex-innvations.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-electric-blue hover:text-white font-bold flex items-center gap-1 transition-colors"
+                  >
+                    <span>VISIT WEBSITE</span>
+                    <ExternalLink size={12} />
+                  </a>
                 </div>
               </div>
             </FadeIn>

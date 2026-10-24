@@ -5,7 +5,7 @@ import {
   CreditCard, ShoppingCart, TrendingUp, TerminalSquare, 
   BookOpen, Users, Building2, Palette, BrainCircuit, 
   ShieldCheck, Scale, Server, Handshake, FileText, ChevronRight,
-  ArrowRight, Sparkles, Compass
+  ArrowRight, Sparkles, Compass, ExternalLink
 } from "lucide-react";
 
 const ecosystemSections = [
@@ -321,17 +321,27 @@ export function EcosystemPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-electric-blue/40 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-4 text-electric-blue">
+              <a
+                href="https://vortex-innvations.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-6 rounded-2xl bg-white/5 border border-electric-blue/30 text-center hover:border-electric-blue hover:bg-white/[0.08] transition-all group block cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-xl bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-4 text-electric-blue group-hover:scale-110 transition-transform">
                   <Sparkles size={24} />
                 </div>
-                <h4 className="font-heading font-black text-lg text-white uppercase tracking-wider mb-1">
-                  VORTEX INNOVATIONS
+                <h4 className="font-heading font-black text-lg text-white uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5 group-hover:text-electric-blue transition-colors">
+                  <span>VORTEX INNOVATIONS</span>
+                  <ExternalLink size={16} className="text-electric-blue opacity-80" />
                 </h4>
-                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider">
+                <p className="text-electric-blue font-mono text-xs uppercase font-bold tracking-wider mb-2">
                   Technology & Innovation
                 </p>
-              </div>
+                <span className="text-[11px] font-mono text-gray-400 group-hover:text-white transition-colors flex items-center justify-center gap-1">
+                  <span>vortex-innvations.vercel.app</span>
+                  <span>→</span>
+                </span>
+              </a>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-electric-blue/40 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center mx-auto mb-4 text-electric-blue">
